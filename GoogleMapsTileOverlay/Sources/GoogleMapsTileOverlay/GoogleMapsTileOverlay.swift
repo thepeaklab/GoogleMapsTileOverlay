@@ -24,7 +24,7 @@ public class GoogleMapsStyleTileOverlay: MKTileOverlay {
 
         let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
         let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
-        super.init(urlTemplate: templateURL + "&apistyle=" + styleURL)
+        super.init(urlTemplate: templateURL + "&apistyle=" + encodedURL)
     }
 
     public init?(jsonURL url: URL) {
@@ -33,7 +33,7 @@ public class GoogleMapsStyleTileOverlay: MKTileOverlay {
 
         let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
         let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
-        super.init(urlTemplate: templateURL + "&apistyle=" + styleURL)
+        super.init(urlTemplate: templateURL + "&apistyle=" + encodedURL)
     }
 
 }
