@@ -1,0 +1,152 @@
+[
+ {
+ "featureType": "administrative.country",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "administrative.country",
+ "elementType": "geometry.stroke",
+ "stylers": [
+             {
+             "color": "#75B6B6"
+             },
+             {
+             "visibility": "on"
+             },
+             {
+             "weight": 3.5
+             }
+             ]
+ },
+ {
+ "featureType": "administrative.country",
+ "elementType": "labels.text",
+ "stylers": [
+             {
+             "visibility": "on"
+             }
+             ]
+ },
+ {
+ "featureType": "administrative.locality",
+ "elementType": "labels.text",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "administrative.province",
+ "elementType": "labels.text",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "landscape",
+ "stylers": [
+             {
+             "color": "#2B2B2B"
+             },
+             {
+             "visibility": "simplified"
+             }
+             ]
+ },
+ {
+ "featureType": "poi",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "poi.park",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "road.arterial",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "road.highway",
+ "stylers": [
+             {
+             "color": "#5CFFCE"
+             },
+             {
+             "visibility": "simplified"
+             }
+             ]
+ },
+ {
+ "featureType": "road.highway",
+ "elementType": "labels",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "road.highway.controlled_access",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "road.local",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "transit",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ },
+ {
+ "featureType": "water",
+ "elementType": "geometry.fill",
+ "stylers": [
+             {
+             "color": "#75B6B6"
+             },
+             {
+             "visibility": "on"
+             }
+             ]
+ },
+ {
+ "featureType": "water",
+ "elementType": "labels.text.fill",
+ "stylers": [
+             {
+             "visibility": "off"
+             }
+             ]
+ }
+]
