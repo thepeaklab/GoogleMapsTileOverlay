@@ -41,6 +41,13 @@
 			remoteGlobalIDString = 5C3E50A820ECC5D800676BF7;
 			remoteInfo = ExampleApp_iOS;
 		};
+		5C3E50D820ED090400676BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C3E507C20ECC3F300676BF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C3E50A820ECC5D800676BF7;
+			remoteInfo = ExampleApp_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +56,6 @@
 		5C3E508920ECC3F300676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C3E508E20ECC3F300676BF7 /* GoogleMapsTileOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapsTileOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3E509320ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertFeatureTests.swift; sourceTree = "<group>"; };
-		5C3E509520ECC3F300676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C3E509F20ECC46600676BF7 /* GoogleMapsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsStyle.swift; sourceTree = "<group>"; };
 		5C3E50A120ECC47600676BF7 /* GoogleMapStyle+ConvertedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapStyle+ConvertedValues.swift"; sourceTree = "<group>"; };
 		5C3E50A320ECC4A100676BF7 /* GoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
@@ -62,7 +68,6 @@
 		5C3E50B720ECC5DA00676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C3E50BC20ECC5DA00676BF7 /* ExampleApp_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleApp_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3E50C020ECC5DA00676BF7 /* ExampleApp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp_iOSTests.swift; sourceTree = "<group>"; };
-		5C3E50C220ECC5DA00676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C3E50C920ECC64C00676BF7 /* ExampleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleMapStyle.json; sourceTree = "<group>"; };
 		5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayBaseTestCase.swift; sourceTree = "<group>"; };
 		5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertElementTests.swift; sourceTree = "<group>"; };
@@ -142,7 +147,6 @@
 				5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */,
 				5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */,
 				5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */,
-				5C3E509520ECC3F300676BF7 /* Info.plist */,
 			);
 			path = GoogleMapsTileOverlayTests;
 			sourceTree = "<group>";
@@ -166,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				5C3E50C020ECC5DA00676BF7 /* ExampleApp_iOSTests.swift */,
-				5C3E50C220ECC5DA00676BF7 /* Info.plist */,
 			);
 			name = ExampleApp_iOSTests;
 			path = Example/ExampleApp_iOSTests;
@@ -260,6 +263,7 @@
 			);
 			dependencies = (
 				5C3E509120ECC3F300676BF7 /* PBXTargetDependency */,
+				5C3E50D920ED090400676BF7 /* PBXTargetDependency */,
 			);
 			name = GoogleMapsTileOverlayTests;
 			productName = GoogleMapsTileOverlayTests;
@@ -316,6 +320,7 @@
 					};
 					5C3E508D20ECC3F300676BF7 = {
 						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 5C3E50A820ECC5D800676BF7;
 					};
 					5C3E50A820ECC5D800676BF7 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -433,6 +438,11 @@
 			isa = PBXTargetDependency;
 			target = 5C3E50A820ECC5D800676BF7 /* ExampleApp_iOS */;
 			targetProxy = 5C3E50BD20ECC5DA00676BF7 /* PBXContainerItemProxy */;
+		};
+		5C3E50D920ED090400676BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C3E50A820ECC5D800676BF7 /* ExampleApp_iOS */;
+			targetProxy = 5C3E50D820ED090400676BF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -634,7 +644,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = GoogleMapsTileOverlayTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,6 +654,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp_iOS.app/ExampleApp_iOS";
 			};
 			name = Debug;
 		};
@@ -653,7 +664,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = GoogleMapsTileOverlayTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -663,6 +674,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp_iOS.app/ExampleApp_iOS";
 			};
 			name = Release;
 		};
@@ -672,7 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = ExampleApp_iOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/ExampleApp_iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = ExampleApp_iOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/ExampleApp_iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,7 +721,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = ExampleApp_iOSTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,7 +742,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK98J66HQM;
-				INFOPLIST_FILE = ExampleApp_iOSTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,6 +9,7 @@
 import XCTest
 @testable import GoogleMapsTileOverlay
 
+
 class GoogleMapsTileOverlayConvertFeatureTests: GoogleMapsTileOverlayBaseTestCase {
     
     func testConvertFeatureTypeAll() {

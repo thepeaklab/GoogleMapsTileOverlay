@@ -33,7 +33,7 @@ internal struct Styler: Decodable {
     var lightness: Int?
     var invertLightness: String?
 
-    init(visibility: String?,
+    init(visibility: String? = nil,
          color: String? = nil,
          weight: Double? = nil,
          gamma: String? = nil,

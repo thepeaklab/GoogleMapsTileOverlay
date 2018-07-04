@@ -105,7 +105,7 @@ private extension GoogleMapsStyle {
             if let gamma = styler.gamma                     { styles.append("p.g:\(gamma)") }
             if let hue = styler.hue                         { styles.append("p.h:\(hue)") }
             if let invertLightness = styler.invertLightness { styles.append("p.il:\(invertLightness)") }
-            if let lightness = styler.invertLightness       { styles.append("p.l:\(lightness)") }
+            if let lightness = styler.lightness             { styles.append("p.l:\(lightness)") }
             if let saturation = styler.saturation           { styles.append("p.s:\(saturation)") }
             if let visibility = styler.visibility           { styles.append("p.v:\(visibility)") }
             if let weight = styler.weight                   { styles.append("p.w:\(weight)") }
