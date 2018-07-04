@@ -10,7 +10,7 @@ import XCTest
 @testable import GoogleMapsTileOverlay
 
 
-class GoogleMapsTileOverlayConvertStylerTests: GoogleMapsTileOverlayBaseTestCase {
+class GoogleMapsTileOverlayConvertStylerTests: XCTestCase {
 
     func testConvertStylerColor() {
         let colorString = "#75B6B6"

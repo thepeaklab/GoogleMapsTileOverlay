@@ -24,6 +24,9 @@
 		5C3E50CF20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */; };
 		5C3E50D120ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */; };
 		5C3E50D320ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */; };
+		5C3E50DD20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */; };
+		5C3E50DF20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */; };
+		5C3E50E120ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayBaseTestCase.swift; sourceTree = "<group>"; };
 		5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertElementTests.swift; sourceTree = "<group>"; };
 		5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertStylerTests.swift; sourceTree = "<group>"; };
+		5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayURLStructureTests.swift; sourceTree = "<group>"; };
+		5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverterTests.swift; sourceTree = "<group>"; };
+		5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,8 @@
 				5C3E509320ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift */,
 				5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */,
 				5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */,
+				5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */,
+				5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */,
 				5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */,
 			);
 			path = GoogleMapsTileOverlayTests;
@@ -196,6 +204,7 @@
 			children = (
 				5C3E50A320ECC4A100676BF7 /* GoogleMapsTileOverlay.swift */,
 				5C3E509F20ECC46600676BF7 /* GoogleMapsStyle.swift */,
+				5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */,
 				5C3E50A120ECC47600676BF7 /* GoogleMapStyle+ConvertedValues.swift */,
 			);
 			path = GoogleMapsTileOverlay;
@@ -394,6 +403,7 @@
 			files = (
 				5C3E50A020ECC46600676BF7 /* GoogleMapsStyle.swift in Sources */,
 				5C3E50A420ECC4A100676BF7 /* GoogleMapsTileOverlay.swift in Sources */,
+				5C3E50E120ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift in Sources */,
 				5C3E50A220ECC47600676BF7 /* GoogleMapStyle+ConvertedValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,10 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C3E50DF20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift in Sources */,
 				5C3E50CF20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift in Sources */,
 				5C3E50D320ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift in Sources */,
 				5C3E509420ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift in Sources */,
 				5C3E50D120ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift in Sources */,
+				5C3E50DD20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

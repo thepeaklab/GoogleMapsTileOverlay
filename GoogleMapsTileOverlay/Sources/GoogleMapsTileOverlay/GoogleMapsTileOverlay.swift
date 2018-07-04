@@ -20,39 +20,20 @@ public class GoogleMapsStyleTileOverlay: MKTileOverlay {
 
     public init?(jsonString string: String) {
         guard let data = string.data(using: .utf8) else { return nil }
-        guard let styles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: data) else { return nil }
+        guard let mapStyles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: data) else { return nil }
 
-        let styleURL = GoogleMapsStyleTileOverlay.createURLFrom(styles: styles)
-        super.init(urlTemplate: templateURL+styleURL)
+        let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
+        super.init(urlTemplate: templateURL + "&apistyle=" + styleURL)
     }
 
     public init?(jsonURL url: URL) {
-        guard let styles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: Data(contentsOf: url))
+        guard let mapStyles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: Data(contentsOf: url))
         else { return nil }
 
-        let styleURL = GoogleMapsStyleTileOverlay.createURLFrom(styles: styles)
-        super.init(urlTemplate: templateURL+styleURL)
-    }
-
-}
-
-private extension GoogleMapsStyleTileOverlay {
-
-    class func createURLFrom(styles: [GoogleMapsStyle]) -> String {
-        var urlString = ""
-
-        for (index, style) in styles.enumerated() {
-            urlString.append(style.convertedStyle())
-            if index != styles.endIndex {
-                urlString.append(",")
-            }
-        }
-
-        urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        urlString = urlString.replacingOccurrences(of: ":", with: "%3A")
-        urlString = urlString.replacingOccurrences(of: ",", with: "%2C")
-
-        return "&apistyle=\(urlString)"
+        let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
+        super.init(urlTemplate: templateURL + "&apistyle=" + styleURL)
     }
 
 }

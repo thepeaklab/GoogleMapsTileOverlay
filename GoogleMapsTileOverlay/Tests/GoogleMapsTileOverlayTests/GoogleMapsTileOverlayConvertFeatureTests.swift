@@ -10,7 +10,7 @@ import XCTest
 @testable import GoogleMapsTileOverlay
 
 
-class GoogleMapsTileOverlayConvertFeatureTests: GoogleMapsTileOverlayBaseTestCase {
+class GoogleMapsTileOverlayConvertFeatureTests: XCTestCase {
     
     func testConvertFeatureTypeAll() {
         let style = GoogleMapsStyle(featureType: "all")
@@ -207,7 +207,5 @@ class GoogleMapsTileOverlayConvertFeatureTests: GoogleMapsTileOverlayBaseTestCas
         let expectedStyle = "s.t:undefined|"
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
-
-
 
 }
