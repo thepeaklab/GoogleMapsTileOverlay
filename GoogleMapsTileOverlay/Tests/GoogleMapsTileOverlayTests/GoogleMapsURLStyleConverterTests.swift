@@ -30,43 +30,46 @@ class GoogleMapsURLStyleConverterTests: XCTestCase {
 
         let convertedStyle = GoogleMapsURLStyleConverter.urlStringFrom(styles: styles)
 
-        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: convertedStyle) {
-            XCTAssertFalse(encodedURL.contains(","))
-            XCTAssertFalse(encodedURL.contains("|"))
-        } else {
-            XCTFail()
-        }
+        let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: convertedStyle)
+        XCTAssertNotNil(encodedURL)
+        XCTAssertFalse(encodedURL!.contains(","))
+        XCTAssertFalse(encodedURL!.contains("|"))
     }
 
     func testEncodedURLShouldHaveEncodedCommas() {
         let url = ","
         let expectededURL = "%2C"
 
-        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
-            XCTAssertEqual(encodedURL, expectededURL)
-        } else {
-            XCTFail()
-        }
+        let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: url)
+        XCTAssertEqual(encodedURL, expectededURL)
     }
 
     func testEncodedURLShouldHaveEncodedSeperator() {
         let url = "|"
-        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
-            let expectededURL = "%7C"
-            XCTAssertEqual(encodedURL, expectededURL)
-        } else {
-            XCTFail()
-        }
+        let expectededURL = "%7C"
+
+        let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: url)
+        XCTAssertEqual(encodedURL, expectededURL)
     }
 
     func testEncodedURLShouldHaveEncodedColon() {
         let url = ":"
-        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
-            let expectededURL = "%3A"
-            XCTAssertEqual(encodedURL, expectededURL)
-        } else {
-            XCTFail()
+        let expectededURL = "%3A"
+
+        let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: url)
+        XCTAssertEqual(encodedURL, expectededURL)
+    }
+
+    func testEncodedURLStringFromInvalidUnicodeStringsShouldThrowFailedToEncodeURLError() {
+        let invalidUnicodeString = String(bytes: [0xD8, 0x00] as [UInt8],
+                                          encoding: String.Encoding.utf16BigEndian)!
+        do {
+            _ = try GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: invalidUnicodeString)
+        } catch let error {
+            let overlayError = (error as? GoogleMapsTileOverlayError)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.failedToEncodeURL)
+            XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }
-    
+
 }

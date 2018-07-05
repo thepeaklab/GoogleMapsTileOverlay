@@ -49,7 +49,12 @@ class GoogleMapsParsingStyleFromJsonTests: XCTestCase {
       }
     ]
     """
+    
+}
 
+
+extension GoogleMapsParsingStyleFromJsonTests {
+    
     func testParsingValidJsonWithOneObjectShouldReturnOneGoogleMapsStyle() {
         guard let jsonData = validJson1.data(using: .utf8) else {
             XCTFail("Failed to convert JsonString to Data")

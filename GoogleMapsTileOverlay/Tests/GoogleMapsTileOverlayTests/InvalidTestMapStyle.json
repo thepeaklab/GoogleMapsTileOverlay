@@ -1,0 +1,19 @@
+[
+    "featureType": "road.highway.controlled_access",
+    "stylers": [
+       {
+          "visibility": "on"
+        }
+      ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+       {
+          "color": "#2B2B2B"
+       {
+          "visibility": "simplified"
+       }
+      ]
+   }

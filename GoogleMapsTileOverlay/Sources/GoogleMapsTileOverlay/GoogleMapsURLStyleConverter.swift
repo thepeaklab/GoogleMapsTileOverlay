@@ -12,28 +12,16 @@ import Foundation
 internal class GoogleMapsURLStyleConverter {
 
     class func urlStringFrom(styles: [GoogleMapsStyle]) -> String {
-        var urlString = ""
-
-        for (index, style) in styles.enumerated() {
-            urlString.append(style.convertedStyle())
-            if index != styles.endIndex {
-                urlString.append(",")
-            }
-        }
-        if urlString.hasSuffix(",") {
-            urlString.removeLast()
-        }
-        return urlString
+        return styles.map { $0.convertedStyle() }.joined(separator: ",")
     }
 
-    class func encodedURLString(urlString: String) throws -> String {
-        if var encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
-            encodedString = encodedString.replacingOccurrences(of: ":", with: "%3A")
-            encodedString = encodedString.replacingOccurrences(of: ",", with: "%2C")
-            return encodedString
-        } else {
+    class func encodedURLStringFrom(urlString: String) throws -> String {
+        guard let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
+        else {
             throw GoogleMapsTileOverlayError.failedToEncodeURL
         }
+        return encodedString.replacingOccurrences(of: ":", with: "%3A")
+                            .replacingOccurrences(of: ",", with: "%2C")
     }
 
 }

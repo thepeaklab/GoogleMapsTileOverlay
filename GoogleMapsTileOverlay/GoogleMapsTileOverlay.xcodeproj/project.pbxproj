@@ -30,6 +30,7 @@
 		5C3E50DF20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */; };
 		5C3E50E120ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */; };
 		5C3E50E320EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */; };
+		5CDC6A9420EE5C9D007D65CA /* InvalidTestMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC6A9320EE5B19007D65CA /* InvalidTestMapStyle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverterTests.swift; sourceTree = "<group>"; };
 		5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverter.swift; sourceTree = "<group>"; };
 		5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsParsingStyleFromJsonTests.swift; sourceTree = "<group>"; };
+		5CDC6A9320EE5B19007D65CA /* InvalidTestMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidTestMapStyle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */,
 				5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */,
 				5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */,
+				5CDC6A9320EE5B19007D65CA /* InvalidTestMapStyle.json */,
 				5C0859AF20EE158300CE708D /* TestMapStyle.json */,
 			);
 			path = GoogleMapsTileOverlayTests;
@@ -381,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDC6A9420EE5C9D007D65CA /* InvalidTestMapStyle.json in Resources */,
 				5C0859B320EE187A00CE708D /* TestMapStyle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

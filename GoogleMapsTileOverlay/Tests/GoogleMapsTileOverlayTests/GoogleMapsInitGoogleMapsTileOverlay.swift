@@ -62,7 +62,7 @@ class GoogleMapsInitGoogleMapsTileOverlay: XCTestCase {
               "visibility": "off"
       """
 
-    let wrongFromattedJson = """
+    let wrongFormattedJson = """
         {
           "featureType": "administrative.country",
           "stylers": [
@@ -105,23 +105,37 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
         do {
            _ = try GoogleMapsTileOverlay(jsonString: invalidJson)
         } catch let error {
-            if let error = error as? GoogleMapsTileOverlayError {
-                XCTAssertEqual(error, GoogleMapsTileOverlayError.invalidJson)
-            } else {
-                XCTFail()
-            }
+            let overlayError = (error as? GoogleMapsTileOverlayError)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }
 
-    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonShouldReturnInvalidJsonError() {
+    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonStringShouldReturnInvalidJsonError() {
         do {
-            _ = try GoogleMapsTileOverlay(jsonString: wrongFromattedJson)
+            _ = try GoogleMapsTileOverlay(jsonString: wrongFormattedJson)
         } catch let error {
-            if let error = error as? GoogleMapsTileOverlayError {
-                XCTAssertEqual(error, GoogleMapsTileOverlayError.invalidJson)
-            } else {
-                XCTFail()
-            }
+            let overlayError = (error as? GoogleMapsTileOverlayError)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }
+
+    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonFileShouldReturnInvalidJsonError() {
+        let bundle = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self)
+        guard let wrongFormattedJsonURL = bundle.url(forResource: "InvalidTestMapStyle", withExtension: "json")
+        else {
+            XCTFail()
+            return
+        }
+
+        do {
+            _ = try GoogleMapsTileOverlay(jsonURL: wrongFormattedJsonURL)
+        } catch let error {
+            let overlayError = (error as? GoogleMapsTileOverlayError)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertNotEqual(overlayError?.localizedDescription, "")
+        }
+    }
+
 }

@@ -12,23 +12,8 @@ import Foundation
 internal extension GoogleMapsStyle {
 
     func convertedStyle() -> String {
-        var converted = ""
-
-        if let feature = convertedFeature() {
-            converted.append(feature)
-            converted.append("|")
-        }
-        if let element = convertedElement() {
-            converted.append(element)
-            converted.append("|")
-        }
-        for style in convertedStylers() {
-            if converted.last != "|" && converted.last != "," {
-                converted.append("|")
-            }
-            converted.append(style)
-        }
-        return converted
+        let mapStylers = convertedStylers().joined(separator: "|")
+        return "\(convertedFeature() ?? "")\(convertedElement() ?? "")\(mapStylers)"
     }
 
 }
@@ -39,78 +24,82 @@ private extension GoogleMapsStyle {
     func convertedFeature() -> String? {
         guard self.featureType != nil else { return nil }
         let key = "s.t:"
+        let sep = "|"
+
         switch self.featureType {
-        case "all"                         : return key + "0"
-        case "administrative"              : return key + "1"
-        case "administrative.country"      : return key + "17"
-        case "administrative.land_parcel"  : return key + "21"
-        case "administrative.locality"     : return key + "19"
-        case "administrative.neighborhood" : return key + "20"
-        case "administrative.province"     : return key + "18"
-        case "landscape"                   : return key + "5"
-        case "landscape.man_made"          : return key + "81"
-        case "landscape.natural"           : return key + "82"
-        case "poi"                         : return key + "2"
-        case "poi.attraction"              : return key + "37"
-        case "poi.business"                : return key + "33"
-        case "poi.government"              : return key + "34"
-        case "poi.medical"                 : return key + "36"
-        case "poi.park"                    : return key + "40"
-        case "poi.place_of_worship"        : return key + "38"
-        case "poi.school"                  : return key + "35"
-        case "poi.sports_complex"          : return key + "39"
-        case "road"                        : return key + "3"
-        case "road.arterial"               : return key + "50"
-        case "road.highway"                : return key + "49"
-        case "road.local"                  : return key + "51"
-        case "transit"                     : return key + "4"
-        case "transit.line"                : return key + "65"
-        case "transit.station"             : return key + "66"
-        case "water"                       : return key + "6"
-        default                            : return key + "undefined"
+        case "all"                         : return key + "0" + sep
+        case "administrative"              : return key + "1" + sep
+        case "administrative.country"      : return key + "17" + sep
+        case "administrative.land_parcel"  : return key + "21" + sep
+        case "administrative.locality"     : return key + "19" + sep
+        case "administrative.neighborhood" : return key + "20" + sep
+        case "administrative.province"     : return key + "18" + sep
+        case "landscape"                   : return key + "5" + sep
+        case "landscape.man_made"          : return key + "81" + sep
+        case "landscape.natural"           : return key + "82" + sep
+        case "poi"                         : return key + "2" + sep
+        case "poi.attraction"              : return key + "37" + sep
+        case "poi.business"                : return key + "33" + sep
+        case "poi.government"              : return key + "34" + sep
+        case "poi.medical"                 : return key + "36" + sep
+        case "poi.park"                    : return key + "40" + sep
+        case "poi.place_of_worship"        : return key + "38" + sep
+        case "poi.school"                  : return key + "35" + sep
+        case "poi.sports_complex"          : return key + "39" + sep
+        case "road"                        : return key + "3" + sep
+        case "road.arterial"               : return key + "50" + sep
+        case "road.highway"                : return key + "49" + sep
+        case "road.local"                  : return key + "51" + sep
+        case "transit"                     : return key + "4" + sep
+        case "transit.line"                : return key + "65" + sep
+        case "transit.station"             : return key + "66" + sep
+        case "water"                       : return key + "6" + sep
+        default                            : return key + "undefined" + sep
         }
     }
 
     func convertedElement() -> String? {
         guard self.elementType != nil else { return nil }
         let key = "s.e:"
+        let sep = "|"
+
         switch self.elementType {
-        case "all"                 : return key + "a"
-        case "geometry"            : return key + "g"
-        case "geometry.fill"       : return key + "g.f"
-        case "geometry.stroke"     : return key + "g.s"
-        case "labels"              : return key + "l"
-        case "labels.icon"         : return key + "l.i"
-        case "labels.text"         : return key + "l.t"
-        case "labels.text.fill"    : return key + "l.t.f"
-        case "labels.text.stroke"  : return key + "l.t.s"
-        default                    : return key + "undefined"
+        case "all"                 : return key + "a" + sep
+        case "geometry"            : return key + "g" + sep
+        case "geometry.fill"       : return key + "g.f" + sep
+        case "geometry.stroke"     : return key + "g.s" + sep
+        case "labels"              : return key + "l" + sep
+        case "labels.icon"         : return key + "l.i" + sep
+        case "labels.text"         : return key + "l.t" + sep
+        case "labels.text.fill"    : return key + "l.t.f" + sep
+        case "labels.text.stroke"  : return key + "l.t.s" + sep
+        default                    : return key + "undefined" + sep
         }
     }
 
     func convertedStylers() -> [String] {
-        var styles = [String]()
-        guard let stylers = stylers else { return styles }
+        var mapStylers = [String]()
+        guard let stylers = self.stylers else { return mapStylers }
 
         for styler in stylers {
 
             if let color = styler.color {
                 if color.count == 7 {
-                    styles.append("p.c:#ff\(color.replacingOccurrences(of: "#", with: ""))")
+                    let colorWithoutHash = color.replacingOccurrences(of: "#", with: "")
+                    mapStylers.append("p.c:#ff\(colorWithoutHash)")
                 } else {
-                    styles.append("p.c:\(color)")
+                    mapStylers.append("p.c:\(color)")
                 }
             }
-
-            if let gamma = styler.gamma                     { styles.append("p.g:\(gamma)") }
-            if let hue = styler.hue                         { styles.append("p.h:\(hue)") }
-            if let invertLightness = styler.invertLightness { styles.append("p.il:\(invertLightness)") }
-            if let lightness = styler.lightness             { styles.append("p.l:\(lightness)") }
-            if let saturation = styler.saturation           { styles.append("p.s:\(saturation)") }
-            if let visibility = styler.visibility           { styles.append("p.v:\(visibility)") }
-            if let weight = styler.weight                   { styles.append("p.w:\(weight)") }
+            if let gamma = styler.gamma                     { mapStylers.append("p.g:\(gamma)") }
+            if let hue = styler.hue                         { mapStylers.append("p.h:\(hue)") }
+            if let invertLightness = styler.invertLightness { mapStylers.append("p.il:\(invertLightness)") }
+            if let lightness = styler.lightness             { mapStylers.append("p.l:\(lightness)") }
+            if let saturation = styler.saturation           { mapStylers.append("p.s:\(saturation)") }
+            if let visibility = styler.visibility           { mapStylers.append("p.v:\(visibility)") }
+            if let weight = styler.weight                   { mapStylers.append("p.w:\(weight)") }
         }
-        return styles
+        return mapStylers
     }
 
 }
