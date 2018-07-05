@@ -26,11 +26,14 @@ internal class GoogleMapsURLStyleConverter {
         return urlString
     }
 
-    class func encodedURLString(urlString: String) -> String {
-        var encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        encodedString = encodedString.replacingOccurrences(of: ":", with: "%3A")
-        encodedString = encodedString.replacingOccurrences(of: ",", with: "%2C")
-        return encodedString
+    class func encodedURLString(urlString: String) throws -> String {
+        if var encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
+            encodedString = encodedString.replacingOccurrences(of: ":", with: "%3A")
+            encodedString = encodedString.replacingOccurrences(of: ",", with: "%2C")
+            return encodedString
+        } else {
+            throw GoogleMapsTileOverlayError.failedToEncodeURL
+        }
     }
 
 }

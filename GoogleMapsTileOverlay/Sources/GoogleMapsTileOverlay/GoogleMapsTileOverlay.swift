@@ -18,21 +18,26 @@ public class GoogleMapsTileOverlay: MKTileOverlay {
         super.init(urlTemplate: templateURL)
     }
 
-    public init?(jsonString string: String) {
-        guard let data = string.data(using: .utf8) else { return nil }
-        guard let mapStyles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: data) else { return nil }
+    public init(jsonString string: String) throws {
+        guard let jsonData = string.data(using: .utf8),
+            let mapStyles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: jsonData)
+        else {
+            throw GoogleMapsTileOverlayError.invalidJson
+        }
 
         let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
+        let encodedURL = try GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
         super.init(urlTemplate: templateURL + "&apistyle=" + encodedURL)
     }
 
-    public init?(jsonURL url: URL) {
+    public init(jsonURL url: URL) throws {
         guard let mapStyles = try? JSONDecoder().decode([GoogleMapsStyle].self, from: Data(contentsOf: url))
-        else { return nil }
+        else {
+            throw GoogleMapsTileOverlayError.invalidJson
+        }
 
         let styleURL = GoogleMapsURLStyleConverter.urlStringFrom(styles: mapStyles)
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
+        let encodedURL = try GoogleMapsURLStyleConverter.encodedURLString(urlString: styleURL)
         super.init(urlTemplate: templateURL + "&apistyle=" + encodedURL)
     }
 

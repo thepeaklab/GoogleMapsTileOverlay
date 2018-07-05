@@ -29,31 +29,44 @@ class GoogleMapsURLStyleConverterTests: XCTestCase {
                       GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")])]
 
         let convertedStyle = GoogleMapsURLStyleConverter.urlStringFrom(styles: styles)
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: convertedStyle)
 
-        XCTAssertFalse(encodedURL.contains(","))
-        XCTAssertFalse(encodedURL.contains("|"))
+        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: convertedStyle) {
+            XCTAssertFalse(encodedURL.contains(","))
+            XCTAssertFalse(encodedURL.contains("|"))
+        } else {
+            XCTFail()
+        }
     }
 
     func testEncodedURLShouldHaveEncodedCommas() {
         let url = ","
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
         let expectededURL = "%2C"
-        XCTAssertEqual(encodedURL, expectededURL)
+
+        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
+            XCTAssertEqual(encodedURL, expectededURL)
+        } else {
+            XCTFail()
+        }
     }
 
     func testEncodedURLShouldHaveEncodedSeperator() {
         let url = "|"
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
-        let expectededURL = "%7C"
-        XCTAssertEqual(encodedURL, expectededURL)
+        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
+            let expectededURL = "%7C"
+            XCTAssertEqual(encodedURL, expectededURL)
+        } else {
+            XCTFail()
+        }
     }
 
     func testEncodedURLShouldHaveEncodedColon() {
         let url = ":"
-        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
-        let expectededURL = "%3A"
-        XCTAssertEqual(encodedURL, expectededURL)
+        if let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLString(urlString: url) {
+            let expectededURL = "%3A"
+            XCTAssertEqual(encodedURL, expectededURL)
+        } else {
+            XCTFail()
+        }
     }
     
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C0859AE20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */; };
 		5C0859B320EE187A00CE708D /* TestMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C0859AF20EE158300CE708D /* TestMapStyle.json */; };
+		5C0859B520EE1B7900CE708D /* GoogleMapsTileOverlayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0859B420EE1B7900CE708D /* GoogleMapsTileOverlayError.swift */; };
 		5C3E508F20ECC3F300676BF7 /* GoogleMapsTileOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3E508520ECC3F300676BF7 /* GoogleMapsTileOverlay.framework */; };
 		5C3E509420ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E509320ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift */; };
 		5C3E509620ECC3F300676BF7 /* GoogleMapsTileOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C3E508820ECC3F300676BF7 /* GoogleMapsTileOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsInitGoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
 		5C0859AF20EE158300CE708D /* TestMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestMapStyle.json; sourceTree = "<group>"; };
+		5C0859B420EE1B7900CE708D /* GoogleMapsTileOverlayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayError.swift; sourceTree = "<group>"; };
 		5C3E508520ECC3F300676BF7 /* GoogleMapsTileOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleMapsTileOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3E508820ECC3F300676BF7 /* GoogleMapsTileOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTileOverlay.h; sourceTree = "<group>"; };
 		5C3E508920ECC3F300676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				5C3E509F20ECC46600676BF7 /* GoogleMapsStyle.swift */,
 				5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */,
 				5C3E50A120ECC47600676BF7 /* GoogleMapStyle+ConvertedValues.swift */,
+				5C0859B420EE1B7900CE708D /* GoogleMapsTileOverlayError.swift */,
 			);
 			path = GoogleMapsTileOverlay;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				5C3E50A020ECC46600676BF7 /* GoogleMapsStyle.swift in Sources */,
 				5C3E50A420ECC4A100676BF7 /* GoogleMapsTileOverlay.swift in Sources */,
 				5C3E50E120ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift in Sources */,
+				5C0859B520EE1B7900CE708D /* GoogleMapsTileOverlayError.swift in Sources */,
 				5C3E50A220ECC47600676BF7 /* GoogleMapStyle+ConvertedValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

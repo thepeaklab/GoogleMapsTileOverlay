@@ -15,7 +15,7 @@ class GoogleMapsInitGoogleMapsTileOverlay: XCTestCase {
 
     let baseURL = "https://mts0.google.com/vt/lyrs=m@289000001&hl=en&src=app&x={x}&y={y}&z={z}&s=DGal"
 
-    let exampleJson1 = """
+    let validJson1 = """
       [
         {
           "featureType": "administrative.country",
@@ -28,7 +28,7 @@ class GoogleMapsInitGoogleMapsTileOverlay: XCTestCase {
       ]
       """
 
-    let exampleJson2 = """
+    let validJson2 = """
     [
       {
         "featureType": "road.highway.controlled_access",
@@ -52,6 +52,26 @@ class GoogleMapsInitGoogleMapsTileOverlay: XCTestCase {
       }
     ]
     """
+
+    let invalidJson = """
+      }
+
+          "featureType": "administrative.country",
+          "stylers": [
+            {
+              "visibility": "off"
+      """
+
+    let wrongFromattedJson = """
+        {
+          "featureType": "administrative.country",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        }
+      """
 }
 
 
@@ -65,20 +85,43 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
     }
 
     func testInitGoogleMapsTileOverlayFromJsonString() {
-        let tileOverlay = GoogleMapsTileOverlay(jsonString: exampleJson1)
+        let tileOverlay = try? GoogleMapsTileOverlay(jsonString: validJson1)
         XCTAssertNotNil(tileOverlay)
         XCTAssertNotNil(tileOverlay?.urlTemplate)
         XCTAssertNotEqual(tileOverlay?.urlTemplate, self.baseURL)
     }
 
-    func testInitGoogleMapsTileOVerlayFromJsonURL() {
+    func testInitGoogleMapsTileOverlayFromJsonURL() {
         let jsonURL = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self).url(forResource: "TestMapStyle",
                                                                                 withExtension: "json")
         XCTAssertNotNil(jsonURL)
-        let tileOverlay = GoogleMapsTileOverlay(jsonURL: jsonURL!)
+        let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL!)
         XCTAssertNotNil(tileOverlay)
         XCTAssertNotNil(tileOverlay?.urlTemplate)
         XCTAssertNotEqual(tileOverlay?.urlTemplate, self.baseURL)
     }
 
+    func testInitGoogleMapsTileOverlayWithInvalidJsonShouldReturnInvalidJsonError() {
+        do {
+           _ = try GoogleMapsTileOverlay(jsonString: invalidJson)
+        } catch let error {
+            if let error = error as? GoogleMapsTileOverlayError {
+                XCTAssertEqual(error, GoogleMapsTileOverlayError.invalidJson)
+            } else {
+                XCTFail()
+            }
+        }
+    }
+
+    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonShouldReturnInvalidJsonError() {
+        do {
+            _ = try GoogleMapsTileOverlay(jsonString: wrongFromattedJson)
+        } catch let error {
+            if let error = error as? GoogleMapsTileOverlayError {
+                XCTAssertEqual(error, GoogleMapsTileOverlayError.invalidJson)
+            } else {
+                XCTFail()
+            }
+        }
+    }
 }

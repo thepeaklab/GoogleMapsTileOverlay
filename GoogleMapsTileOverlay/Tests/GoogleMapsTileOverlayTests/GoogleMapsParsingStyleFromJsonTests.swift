@@ -12,7 +12,7 @@ import XCTest
 
 class GoogleMapsParsingStyleFromJsonTests: XCTestCase {
 
-    let exampleJson1 = """
+    let validJson1 = """
       [
         {
           "featureType": "administrative.country",
@@ -25,7 +25,7 @@ class GoogleMapsParsingStyleFromJsonTests: XCTestCase {
       ]
       """
 
-    let exampleJson2 = """
+    let validJson2 = """
     [
       {
         "featureType": "road.highway.controlled_access",
@@ -50,8 +50,8 @@ class GoogleMapsParsingStyleFromJsonTests: XCTestCase {
     ]
     """
 
-    func testParsingExampleJson1ShouldReturnOneMapStyleWithVisibilityOff() {
-        guard let jsonData = exampleJson1.data(using: .utf8) else {
+    func testParsingValidJsonWithOneObjectShouldReturnOneGoogleMapsStyle() {
+        guard let jsonData = validJson1.data(using: .utf8) else {
             XCTFail("Failed to convert JsonString to Data")
             return
         }
@@ -67,8 +67,8 @@ class GoogleMapsParsingStyleFromJsonTests: XCTestCase {
         XCTAssertEqual(mapStyles[0].stylers?[0].visibility, "off")
     }
 
-    func testParsingExampleJson2ShouldReturnTwoMapStylesWith() {
-        guard let jsonData = exampleJson2.data(using: .utf8) else {
+    func testParsingValidJsonWithTwoObjectsShouldReturnTwoGoogleMapsStyles() {
+        guard let jsonData = validJson2.data(using: .utf8) else {
             XCTFail("Failed to convert JsonString to Data")
             return
         }
