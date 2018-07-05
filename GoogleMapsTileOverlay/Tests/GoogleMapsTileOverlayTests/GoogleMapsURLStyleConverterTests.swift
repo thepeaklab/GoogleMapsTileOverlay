@@ -23,4 +23,37 @@ class GoogleMapsURLStyleConverterTests: XCTestCase {
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
 
+    func testEncodedURLShouldNotHaveCommasOrSeperators() {
+        let styles = [GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")]),
+                      GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")]),
+                      GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")])]
+
+        let convertedStyle = GoogleMapsURLStyleConverter.urlStringFrom(styles: styles)
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: convertedStyle)
+
+        XCTAssertFalse(encodedURL.contains(","))
+        XCTAssertFalse(encodedURL.contains("|"))
+    }
+
+    func testEncodedURLShouldHaveEncodedCommas() {
+        let url = ","
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
+        let expectededURL = "%2C"
+        XCTAssertEqual(encodedURL, expectededURL)
+    }
+
+    func testEncodedURLShouldHaveEncodedSeperator() {
+        let url = "|"
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
+        let expectededURL = "%7C"
+        XCTAssertEqual(encodedURL, expectededURL)
+    }
+
+    func testEncodedURLShouldHaveEncodedColon() {
+        let url = ":"
+        let encodedURL = GoogleMapsURLStyleConverter.encodedURLString(urlString: url)
+        let expectededURL = "%3A"
+        XCTAssertEqual(encodedURL, expectededURL)
+    }
+    
 }

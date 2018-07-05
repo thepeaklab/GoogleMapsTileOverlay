@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 
-public class GoogleMapsStyleTileOverlay: MKTileOverlay {
+public class GoogleMapsTileOverlay: MKTileOverlay {
 
     private let templateURL = "https://mts0.google.com/vt/lyrs=m@289000001&hl=en&src=app&x={x}&y={y}&z={z}&s=DGal"
 

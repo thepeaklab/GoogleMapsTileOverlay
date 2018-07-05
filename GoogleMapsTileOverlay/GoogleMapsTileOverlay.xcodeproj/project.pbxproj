@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0859AE20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */; };
+		5C0859B320EE187A00CE708D /* TestMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C0859AF20EE158300CE708D /* TestMapStyle.json */; };
 		5C3E508F20ECC3F300676BF7 /* GoogleMapsTileOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3E508520ECC3F300676BF7 /* GoogleMapsTileOverlay.framework */; };
 		5C3E509420ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E509320ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift */; };
 		5C3E509620ECC3F300676BF7 /* GoogleMapsTileOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C3E508820ECC3F300676BF7 /* GoogleMapsTileOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,12 +23,12 @@
 		5C3E50C120ECC5DA00676BF7 /* ExampleApp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50C020ECC5DA00676BF7 /* ExampleApp_iOSTests.swift */; };
 		5C3E50CB20ECC6C900676BF7 /* GoogleMapsTileOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3E508520ECC3F300676BF7 /* GoogleMapsTileOverlay.framework */; };
 		5C3E50CD20ECCC1300676BF7 /* ExampleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E50C920ECC64C00676BF7 /* ExampleMapStyle.json */; };
-		5C3E50CF20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */; };
 		5C3E50D120ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */; };
 		5C3E50D320ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */; };
 		5C3E50DD20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */; };
 		5C3E50DF20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */; };
 		5C3E50E120ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */; };
+		5C3E50E320EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsInitGoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
+		5C0859AF20EE158300CE708D /* TestMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestMapStyle.json; sourceTree = "<group>"; };
 		5C3E508520ECC3F300676BF7 /* GoogleMapsTileOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleMapsTileOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3E508820ECC3F300676BF7 /* GoogleMapsTileOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTileOverlay.h; sourceTree = "<group>"; };
 		5C3E508920ECC3F300676BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,12 +76,12 @@
 		5C3E50BC20ECC5DA00676BF7 /* ExampleApp_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleApp_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3E50C020ECC5DA00676BF7 /* ExampleApp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp_iOSTests.swift; sourceTree = "<group>"; };
 		5C3E50C920ECC64C00676BF7 /* ExampleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleMapStyle.json; sourceTree = "<group>"; };
-		5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayBaseTestCase.swift; sourceTree = "<group>"; };
 		5C3E50D020ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertElementTests.swift; sourceTree = "<group>"; };
 		5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayConvertStylerTests.swift; sourceTree = "<group>"; };
 		5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayURLStructureTests.swift; sourceTree = "<group>"; };
 		5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverterTests.swift; sourceTree = "<group>"; };
 		5C3E50E020ED1BF800676BF7 /* GoogleMapsURLStyleConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverter.swift; sourceTree = "<group>"; };
+		5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsParsingStyleFromJsonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +158,9 @@
 				5C3E50D220ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift */,
 				5C3E50DC20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift */,
 				5C3E50DE20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift */,
-				5C3E50CE20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift */,
+				5C3E50E220EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift */,
+				5C0859AD20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift */,
+				5C0859AF20EE158300CE708D /* TestMapStyle.json */,
 			);
 			path = GoogleMapsTileOverlayTests;
 			sourceTree = "<group>";
@@ -329,7 +335,6 @@
 					};
 					5C3E508D20ECC3F300676BF7 = {
 						CreatedOnToolsVersion = 9.3.1;
-						TestTargetID = 5C3E50A820ECC5D800676BF7;
 					};
 					5C3E50A820ECC5D800676BF7 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -373,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0859B320EE187A00CE708D /* TestMapStyle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,9 +419,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C3E50DF20ED1B5100676BF7 /* GoogleMapsURLStyleConverterTests.swift in Sources */,
-				5C3E50CF20ECF2FD00676BF7 /* GoogleMapsTileOverlayBaseTestCase.swift in Sources */,
+				5C0859AE20EE129300CE708D /* GoogleMapsInitGoogleMapsTileOverlay.swift in Sources */,
 				5C3E50D320ECF5CE00676BF7 /* GoogleMapsTileOverlayConvertStylerTests.swift in Sources */,
 				5C3E509420ECC3F300676BF7 /* GoogleMapsTileOverlayConvertFeatureTests.swift in Sources */,
+				5C3E50E320EE014300676BF7 /* GoogleMapsParsingStyleFromJsonTests.swift in Sources */,
 				5C3E50D120ECF3D600676BF7 /* GoogleMapsTileOverlayConvertElementTests.swift in Sources */,
 				5C3E50DD20ED0C8700676BF7 /* GoogleMapsTileOverlayURLStructureTests.swift in Sources */,
 			);
@@ -666,7 +673,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp_iOS.app/ExampleApp_iOS";
 			};
 			name = Debug;
 		};
@@ -686,7 +692,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp_iOS.app/ExampleApp_iOS";
 			};
 			name = Release;
 		};

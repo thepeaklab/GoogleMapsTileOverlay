@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     private func addCustomOverlay() {
         guard let jsonURL = Bundle.main.url(forResource: "ExampleMapStyle", withExtension: "json") else { return }
-        guard let gmTileOverlay = GoogleMapsStyleTileOverlay(jsonURL: jsonURL) else { return }
+        guard let gmTileOverlay = GoogleMapsTileOverlay(jsonURL: jsonURL) else { return }
 
         gmTileOverlay.canReplaceMapContent = true
         mapView.add(gmTileOverlay)
