@@ -10,6 +10,7 @@ import Foundation
 
 
 internal struct GoogleMapsStyle: Decodable {
+
     var featureType: String?
     var elementType: String?
     var stylers: [Styler]?
@@ -21,9 +22,12 @@ internal struct GoogleMapsStyle: Decodable {
         self.elementType = elementType
         self.stylers = stylers
     }
+
 }
 
+
 internal struct Styler: Decodable {
+
     var visibility: String?
     var color: String?
     var weight: Double?
@@ -40,7 +44,7 @@ internal struct Styler: Decodable {
          hue: String? = nil,
          saturation: Int? = nil,
          lightness: Int? = nil,
-        invertLightness: String? = nil) {
+         invertLightness: String? = nil) {
 
         self.visibility = visibility
         self.color = color
@@ -51,4 +55,5 @@ internal struct Styler: Decodable {
         self.lightness = lightness
         self.invertLightness = invertLightness
     }
+
 }

@@ -106,7 +106,7 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
            _ = try GoogleMapsTileOverlay(jsonString: invalidJson)
         } catch let error {
             let overlayError = (error as? GoogleMapsTileOverlayError)
-            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJSON)
             XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }
@@ -116,7 +116,7 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
             _ = try GoogleMapsTileOverlay(jsonString: wrongFormattedJson)
         } catch let error {
             let overlayError = (error as? GoogleMapsTileOverlayError)
-            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJSON)
             XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }
@@ -133,7 +133,7 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
             _ = try GoogleMapsTileOverlay(jsonURL: wrongFormattedJsonURL)
         } catch let error {
             let overlayError = (error as? GoogleMapsTileOverlayError)
-            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJson)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJSON)
             XCTAssertNotEqual(overlayError?.localizedDescription, "")
         }
     }

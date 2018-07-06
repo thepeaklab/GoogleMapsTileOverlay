@@ -11,7 +11,7 @@ import Foundation
 
 public enum GoogleMapsTileOverlayError: Error {
 
-    case invalidJson
+    case invalidJSON
     case failedToEncodeURL
 
 }
@@ -21,7 +21,7 @@ extension GoogleMapsTileOverlayError: LocalizedError {
 
     public var errorDescription: String? {
         switch self {
-        case .invalidJson:        return "Json file is not valid"
+        case .invalidJSON:        return "JSON file is not valid"
         case .failedToEncodeURL:  return "Failed to encode URL with percentage encoding"
         }
     }

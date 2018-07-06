@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5C3E508420ECC3F300676BF7"
-               BuildableName = "GoogleMapsTileOverlay_iOS.framework"
+               BuildableName = "GoogleMapsTileOverlay.framework"
                BlueprintName = "GoogleMapsTileOverlay-iOS"
                ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5C3E508420ECC3F300676BF7"
-            BuildableName = "GoogleMapsTileOverlay_iOS.framework"
+            BuildableName = "GoogleMapsTileOverlay.framework"
             BlueprintName = "GoogleMapsTileOverlay-iOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5C3E508420ECC3F300676BF7"
-            BuildableName = "GoogleMapsTileOverlay_iOS.framework"
+            BuildableName = "GoogleMapsTileOverlay.framework"
             BlueprintName = "GoogleMapsTileOverlay-iOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5C3E508420ECC3F300676BF7"
-            BuildableName = "GoogleMapsTileOverlay_iOS.framework"
+            BuildableName = "GoogleMapsTileOverlay.framework"
             BlueprintName = "GoogleMapsTileOverlay-iOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>

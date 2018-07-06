@@ -18,7 +18,7 @@ class GoogleMapsURLStyleConverterTests: XCTestCase {
                       GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")]),
                       GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")])]
 
-        let convertedStyle = GoogleMapsURLStyleConverter.urlStringFrom(styles: styles)
+        let convertedStyle = GoogleMapsURLStyleConverter.convertedStyleFrom(styles: styles)
         let expectedStyle = "s.t:0|p.v:on,s.t:0|p.v:on,s.t:0|p.v:on"
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
@@ -28,7 +28,7 @@ class GoogleMapsURLStyleConverterTests: XCTestCase {
                       GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")]),
                       GoogleMapsStyle(featureType: "all", stylers: [Styler(visibility: "on")])]
 
-        let convertedStyle = GoogleMapsURLStyleConverter.urlStringFrom(styles: styles)
+        let convertedStyle = GoogleMapsURLStyleConverter.convertedStyleFrom(styles: styles)
 
         let encodedURL = try? GoogleMapsURLStyleConverter.encodedURLStringFrom(urlString: convertedStyle)
         XCTAssertNotNil(encodedURL)

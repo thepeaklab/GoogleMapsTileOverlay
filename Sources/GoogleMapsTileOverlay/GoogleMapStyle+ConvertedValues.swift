@@ -22,11 +22,11 @@ internal extension GoogleMapsStyle {
 private extension GoogleMapsStyle {
 
     func convertedFeature() -> String? {
-        guard self.featureType != nil else { return nil }
+        guard featureType != nil else { return nil }
         let key = "s.t:"
         let sep = "|"
 
-        switch self.featureType {
+        switch featureType {
         case "all"                         : return key + "0" + sep
         case "administrative"              : return key + "1" + sep
         case "administrative.country"      : return key + "17" + sep
@@ -59,11 +59,11 @@ private extension GoogleMapsStyle {
     }
 
     func convertedElement() -> String? {
-        guard self.elementType != nil else { return nil }
+        guard elementType != nil else { return nil }
         let key = "s.e:"
         let sep = "|"
 
-        switch self.elementType {
+        switch elementType {
         case "all"                 : return key + "a" + sep
         case "geometry"            : return key + "g" + sep
         case "geometry.fill"       : return key + "g.f" + sep
@@ -79,10 +79,9 @@ private extension GoogleMapsStyle {
 
     func convertedStylers() -> [String] {
         var mapStylers = [String]()
-        guard let stylers = self.stylers else { return mapStylers }
+        guard let stylers = stylers else { return mapStylers }
 
         for styler in stylers {
-
             if let color = styler.color {
                 if color.count == 7 {
                     let colorWithoutHash = color.replacingOccurrences(of: "#", with: "")

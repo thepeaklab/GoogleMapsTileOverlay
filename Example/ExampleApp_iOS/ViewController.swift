@@ -20,6 +20,11 @@ class ViewController: UIViewController {
 
         mapView.delegate = self
         addCustomOverlay()
+
+        let annotation = SampleAnnotation(coordinate: CLLocationCoordinate2D(latitude: 53.141351, longitude: 8.229935),
+                                          title: "the peak lab.",
+                                          subtitle: "Office")
+        mapView.addAnnotation(annotation)
     }
 
     private func addCustomOverlay() {
@@ -43,5 +48,19 @@ extension ViewController: MKMapViewDelegate {
             return MKTileOverlayRenderer(tileOverlay: tileOverlay)
         }
         return MKOverlayRenderer(overlay: overlay)
+    }
+
+}
+
+class SampleAnnotation: NSObject, MKAnnotation {
+
+    public var coordinate: CLLocationCoordinate2D
+    public var title: String?
+    public var subtitle: String?
+
+    public init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C3E50A820ECC5D800676BF7"
-               BuildableName = "ExampleApp_iOS.app"
-               BlueprintName = "ExampleApp_iOS"
-               ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C3E508420ECC3F300676BF7"
-               BuildableName = "GoogleMapsTileOverlay_iOS.framework"
-               BlueprintName = "GoogleMapsTileOverlay-iOS"
+               BlueprintIdentifier = "5C2F324620EF6AC900FAB139"
+               BuildableName = "GoogleMapsTileOverlay.framework"
+               BlueprintName = "GoogleMapsTileOverlay-tvOS"
                ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C3E50BB20ECC5DA00676BF7"
-               BuildableName = "ExampleApp_iOSTests.xctest"
-               BlueprintName = "ExampleApp_iOSTests"
+               BlueprintIdentifier = "5C2F324E20EF6AC900FAB139"
+               BuildableName = "GoogleMapsTileOverlay-tvOS-Tests.xctest"
+               BlueprintName = "GoogleMapsTileOverlay-tvOS-Tests"
                ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5C3E50A820ECC5D800676BF7"
-            BuildableName = "ExampleApp_iOS.app"
-            BlueprintName = "ExampleApp_iOS"
+            BlueprintIdentifier = "5C2F324620EF6AC900FAB139"
+            BuildableName = "GoogleMapsTileOverlay.framework"
+            BlueprintName = "GoogleMapsTileOverlay-tvOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5C3E50A820ECC5D800676BF7"
-            BuildableName = "ExampleApp_iOS.app"
-            BlueprintName = "ExampleApp_iOS"
+            BlueprintIdentifier = "5C2F324620EF6AC900FAB139"
+            BuildableName = "GoogleMapsTileOverlay.framework"
+            BlueprintName = "GoogleMapsTileOverlay-tvOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -94,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5C3E50A820ECC5D800676BF7"
-            BuildableName = "ExampleApp_iOS.app"
-            BlueprintName = "ExampleApp_iOS"
+            BlueprintIdentifier = "5C2F324620EF6AC900FAB139"
+            BuildableName = "GoogleMapsTileOverlay.framework"
+            BlueprintName = "GoogleMapsTileOverlay-tvOS"
             ReferencedContainer = "container:GoogleMapsTileOverlay.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
