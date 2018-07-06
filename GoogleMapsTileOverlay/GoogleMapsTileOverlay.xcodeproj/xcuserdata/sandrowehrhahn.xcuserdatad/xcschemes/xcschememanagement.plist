@@ -7,16 +7,31 @@
 		<key>ExampleApp_iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
-		<key>GoogleMapsTileOverlay.xcscheme_^#shared#^_</key>
+		<key>GoogleMapsTileOverlay-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GoogleMapsTileOverlay-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5C2F324620EF6AC900FAB139</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C2F324E20EF6AC900FAB139</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5C3E508420ECC3F300676BF7</key>
 		<dict>
 			<key>primary</key>
