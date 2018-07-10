@@ -82,6 +82,20 @@ class GoogleMapsTileOverlayConvertFeatureTests: XCTestCase {
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
 
+    func testConvertFeatureTypeLandscape_natural_landcover() {
+        let style = GoogleMapsStyle(featureType: "landscape.natural.landcover")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1313|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
+    func testConvertFeatureTypeLandscape_natural_terrain() {
+        let style = GoogleMapsStyle(featureType: "landscape.natural.terrain")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1314|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
     func testConvertFeatureTypePOI() {
         let style = GoogleMapsStyle(featureType: "poi")
         let convertedStyle = style.convertedStyle()
@@ -166,6 +180,13 @@ class GoogleMapsTileOverlayConvertFeatureTests: XCTestCase {
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
 
+    func testConvertFeatureTypeRoad_highway_controlled_access() {
+        let style = GoogleMapsStyle(featureType: "road.highway.controlled_access")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:785|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
     func testConvertFeatureTypeRoad_local() {
         let style = GoogleMapsStyle(featureType: "road.local")
         let convertedStyle = style.convertedStyle()
@@ -191,6 +212,34 @@ class GoogleMapsTileOverlayConvertFeatureTests: XCTestCase {
         let style = GoogleMapsStyle(featureType: "transit.station")
         let convertedStyle = style.convertedStyle()
         let expectedStyle = "s.t:66|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
+    func testConvertFeatureTypeTransit_station_airport() {
+        let style = GoogleMapsStyle(featureType: "transit.station.airport")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1059|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
+    func testConvertFeatureTypeTransit_station_bus() {
+        let style = GoogleMapsStyle(featureType: "transit.station.bus")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1058|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
+    func testConvertFeatureTypeTransit_station_rail() {
+        let style = GoogleMapsStyle(featureType: "transit.station.rail")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1057|"
+        XCTAssertEqual(convertedStyle, expectedStyle)
+    }
+
+    func testConvertFeatureTypeTransit_station_ferry() {
+        let style = GoogleMapsStyle(featureType: "transit.station.ferry")
+        let convertedStyle = style.convertedStyle()
+        let expectedStyle = "s.t:1060|"
         XCTAssertEqual(convertedStyle, expectedStyle)
     }
 

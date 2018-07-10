@@ -18,7 +18,7 @@ To install `GoogleMapsTileOverlay ` with Carthage, setup Carthage for your proje
 Then add this line to your Cartfile:
 
 ```
-github "thepeaklab/GoogleMapsTileOverlay" ~> 0.1.0
+github "thepeaklab/GoogleMapsTileOverlay" ~> 0.2.0
 ```
 
 ## Example
@@ -26,8 +26,7 @@ You can customize Apple Maps to match the design of your App or Game:
 
 [Example Project](Example)
 
-<img src="Example/Screenshot1.png" height="400">
-<img src="Example/Screenshot2.png" height="400">
+<img src="Example/Screenshot1.png" height="400"> <img src="Example/Screenshot2.png" height="400">
 
 ## Usage
 
