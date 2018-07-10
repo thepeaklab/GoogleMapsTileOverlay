@@ -2,7 +2,7 @@
 
 ![Swift Version](https://img.shields.io/badge/Swift-4.1.2-orange.svg)
 ![PackageManager](https://img.shields.io/badge/PackageManager-Carthage-brightgreen.svg?style=flat)
-![Platforms](https://img.shields.io/badge/Platforms-iOS|tvOS-yellow.svg?style=flat)
+![Platforms](https://img.shields.io/badge/Platforms-iOS|tvOS|macOS-yellow.svg?style=flat)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://github.com/thepeaklab/GoogleMapsTileOverlay/blob/master/LICENSE)
 [![Twitter: @thepeaklab](https://img.shields.io/badge/contact-@thepeaklab-009fee.svg?style=flat)](https://twitter.com/thepeaklab)
 
@@ -18,7 +18,7 @@ To install `GoogleMapsTileOverlay ` with Carthage, setup Carthage for your proje
 Then add this line to your Cartfile:
 
 ```
-github "thepeaklab/GoogleMapsTileOverlay" ~> 0.2.0
+github "thepeaklab/GoogleMapsTileOverlay" ~> 0.3.0
 ```
 
 ## Example
@@ -26,7 +26,7 @@ You can customize Apple Maps to match the design of your App or Game:
 
 [Example Project](Example)
 
-<img src="Example/Screenshot1.png" height="400"> <img src="Example/Screenshot2.png" height="400">
+<img src="Example/Screenshot1.png" height="400"> <img src="Example/Screenshot2.png" height="400"> <img src="Example/Screenshot3.png" height="400"> <img src="Example/Screenshot4.png" height="400"> <img src="Example/Screenshot6.png" height="400"> <img src="Example/Screenshot5.png" height="400">
 
 ## Usage
 
