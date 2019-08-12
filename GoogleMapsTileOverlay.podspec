@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.license      = { :type => "MIT" }
-  spec.author       = { "Sandro Wehrhahn" => "sw@thepeaklab.com" }
+  spec.author       = { "the peak lab" => "sw@thepeaklab.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.ios.deployment_target = "8.4"
