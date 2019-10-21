@@ -19,7 +19,7 @@ To install `GoogleMapsTileOverlay ` with Carthage, setup Carthage for your proje
 Then add this line to your Cartfile:
 
 ```
-github "thepeaklab/GoogleMapsTileOverlay" ~> 0.4.0
+github "thepeaklab/GoogleMapsTileOverlay" ~> 0.4.1
 ```
 
 ### CocoaPods
@@ -29,7 +29,7 @@ Install [CocoaPods](http://cocoapods.org) if you haven't already
 Add this in your `Podfile` for your target:
 
 ```
-pod 'GoogleMapsTileOverlay', '~> 0.4.0'
+pod 'GoogleMapsTileOverlay', '~> 0.4.1'
 ```
 And install with:
 
@@ -61,7 +61,7 @@ guard let jsonURL = Bundle.main.url(forResource: "MapStyle", withExtension: "jso
 
 let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL)
 tileOverlay.canReplaceMapContent = true
-mapView.add(tileOverlay)
+mapView.addOverlay(tileOverlay, level: .aboveRoads)
 ```
 
 #### Add delegate for your MKMapView:
@@ -82,6 +82,10 @@ extension YourViewController: MKMapViewDelegate {
 
 }
 ```
+
+## Known Issues
+
+1. [Labels in iOS 13](https://github.com/thepeaklab/GoogleMapsTileOverlay/issues/6) On iOS 13 the labels on the map and the annotations are not visible, even when using the level **aboveRoads**. This bug is already reported to Apple and will hopefully be solved in future versions of iOS.
 
 ## Need Help?
 
