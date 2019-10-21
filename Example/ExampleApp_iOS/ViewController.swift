@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         do {
             let gmTileOverlay = try GoogleMapsTileOverlay(jsonURL: jsonURL)
             gmTileOverlay.canReplaceMapContent = true
-            mapView.addOverlay(gmTileOverlay)
+            mapView.addOverlay(gmTileOverlay, level: .aboveRoads)
         } catch let error {
             print(error.localizedDescription)
         }

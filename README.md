@@ -19,7 +19,7 @@ To install `GoogleMapsTileOverlay ` with Carthage, setup Carthage for your proje
 Then add this line to your Cartfile:
 
 ```
-github "thepeaklab/GoogleMapsTileOverlay" ~> 0.4.0
+github "thepeaklab/GoogleMapsTileOverlay" ~> 0.4.1
 ```
 
 ### CocoaPods
@@ -29,7 +29,7 @@ Install [CocoaPods](http://cocoapods.org) if you haven't already
 Add this in your `Podfile` for your target:
 
 ```
-pod 'GoogleMapsTileOverlay', '~> 0.4.0'
+pod 'GoogleMapsTileOverlay', '~> 0.4.1'
 ```
 And install with:
 
@@ -61,7 +61,7 @@ guard let jsonURL = Bundle.main.url(forResource: "MapStyle", withExtension: "jso
 
 let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL)
 tileOverlay.canReplaceMapContent = true
-mapView.add(tileOverlay)
+mapView.addOverlay(tileOverlay, level: .aboveRoads)
 ```
 
 #### Add delegate for your MKMapView:
