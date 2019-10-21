@@ -83,6 +83,10 @@ extension YourViewController: MKMapViewDelegate {
 }
 ```
 
+## Known Issues
+
+1. [Labels in iOS 13](https://github.com/thepeaklab/GoogleMapsTileOverlay/issues/6) On iOS 13 the labels on the map and the annotations are not visible, even when using the level **aboveRoads**. This bug is already reported to Apple and will hopefully be solved in future versions of iOS.
+
 ## Need Help?
 
 Please [submit an issue](https://github.com/thepeaklab/GoogleMapsTileOverlay/issues) on GitHub.
