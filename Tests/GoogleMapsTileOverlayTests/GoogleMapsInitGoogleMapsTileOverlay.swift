@@ -74,38 +74,6 @@ class GoogleMapsInitGoogleMapsTileOverlay: XCTestCase {
       """
 }
 
-#if !SWIFT_PACKAGE
-// As far as SPM is not able to link any resorce files, there are no way to test it withou workarounds
-extension GoogleMapsInitGoogleMapsTileOverlay {
-    func testInitGoogleMapsTileOverlayFromJsonURL() {
-        let jsonURL = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self).url(forResource: "TestMapStyle",
-                                                                                withExtension: "json")
-        XCTAssertNotNil(jsonURL)
-        let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL!)
-        XCTAssertNotNil(tileOverlay)
-        XCTAssertNotNil(tileOverlay?.urlTemplate)
-        XCTAssertNotEqual(tileOverlay?.urlTemplate, self.baseURL)
-    }
-    
-    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonFileShouldReturnInvalidJsonError() {
-        let bundle = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self)
-        guard let wrongFormattedJsonURL = bundle.url(forResource: "InvalidTestMapStyle", withExtension: "json")
-        else {
-            XCTFail()
-            return
-        }
-
-        do {
-            _ = try GoogleMapsTileOverlay(jsonURL: wrongFormattedJsonURL)
-        } catch let error {
-            let overlayError = (error as? GoogleMapsTileOverlayError)
-            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJSON)
-            XCTAssertNotEqual(overlayError?.localizedDescription, "")
-        }
-    }
-}
-#endif
-
 extension GoogleMapsInitGoogleMapsTileOverlay {
 
     func testInitGoogleMapsTileOverlayWithBaseURL() {
@@ -142,3 +110,41 @@ extension GoogleMapsInitGoogleMapsTileOverlay {
         }
     }
 }
+
+
+// MARK: - Workaround: SPM is not able to link to resource files
+              
+#if !SWIFT_PACKAGE
+
+extension GoogleMapsInitGoogleMapsTileOverlay {
+
+    func testInitGoogleMapsTileOverlayFromJsonURL() {
+        let jsonURL = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self).url(forResource: "TestMapStyle",
+                                                                                withExtension: "json")
+        XCTAssertNotNil(jsonURL)
+        let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL!)
+        XCTAssertNotNil(tileOverlay)
+        XCTAssertNotNil(tileOverlay?.urlTemplate)
+        XCTAssertNotEqual(tileOverlay?.urlTemplate, self.baseURL)
+    }
+    
+    func testInitGoogleMapsTileOverlayWithWrongFormattedJsonFileShouldReturnInvalidJsonError() {
+        let bundle = Bundle(for: GoogleMapsInitGoogleMapsTileOverlay.self)
+        guard let wrongFormattedJsonURL = bundle.url(forResource: "InvalidTestMapStyle", withExtension: "json")
+        else {
+            XCTFail()
+            return
+        }
+
+        do {
+            _ = try GoogleMapsTileOverlay(jsonURL: wrongFormattedJsonURL)
+        } catch let error {
+            let overlayError = (error as? GoogleMapsTileOverlayError)
+            XCTAssertEqual(overlayError, GoogleMapsTileOverlayError.invalidJSON)
+            XCTAssertNotEqual(overlayError?.localizedDescription, "")
+        }
+    }
+
+}
+
+#endif              
