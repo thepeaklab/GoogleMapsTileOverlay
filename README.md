@@ -1,6 +1,6 @@
 # GoogleMapsTileOverlay for MapKit
 
-![Swift Version](https://img.shields.io/badge/Swift-4.1.2-orange.svg)
+![Swift Version](https://img.shields.io/badge/Swift-5.0.0-orange.svg)
 ![PackageManager](https://img.shields.io/badge/PackageManager-Carthage-brightgreen.svg?style=flat)
 ![Cocoapods](https://img.shields.io/cocoapods/p/GoogleMapsTileOverlay?label=pod)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS|tvOS|macOS-yellow.svg?style=flat)
@@ -11,6 +11,14 @@ GoogleMapsTileOverlay lets you customize Apple Maps [MKMapView](https://develope
 
 
 ## Install
+
+### Swift Package Manager
+
+Add this line to your depedencies in Package.swift
+
+```
+.package("https://github.com/thepeaklab/GoogleMapsTileOverlay", from: "0.5.0")
+```
 
 ### Carthage
 
